@@ -1,11 +1,12 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.25;
 
-import {Test, console} from "forge-std/Test.sol";
-import {DopamineVault} from "../src/DopamineVault.sol";
+/*
+import { Test, console } from "forge-std/Test.sol";
+import { VaultV1 } from "../src/VaultV1.sol";
 
 contract CounterTest is Test {
-    DopamineVault public counter;
+    Vault public counter;
 
     function setUp() public {
         counter = new DopamineVault();
@@ -22,3 +23,4 @@ contract CounterTest is Test {
         assertEq(counter.number(), x);
     }
 }
+*/

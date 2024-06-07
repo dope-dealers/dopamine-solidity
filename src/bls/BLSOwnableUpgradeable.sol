@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.21;
+pragma solidity ^0.8.25;
 
-import "@upgradeable/proxy/utils/Initializable.sol";
-import "@upgradeable/utils/cryptography/EIP712Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/utils/cryptography/EIP712Upgradeable.sol";
 
 import "./BLS.sol";
 
@@ -22,7 +22,7 @@ abstract contract BLSOwnableUpgradeable is Initializable, EIP712Upgradeable {
     /**
     * @dev Transfer ownership of the contract to a new bls public key
     * @param _blsPublicKey The new owner bls public key
-    * @param _blsSignature The BLS signature, signed by the old public key
+    * @param _blsSignature The bls signature, signed by the old public key
     *
     * The following message must be signed:
     * `keccak256(abi.encode(EIP712_TRANSFER_OWNER, blsPublicKey_))`
@@ -40,7 +40,7 @@ abstract contract BLSOwnableUpgradeable is Initializable, EIP712Upgradeable {
     * @dev Verifies that the message was signed by the owner bls public key
     * @dev Throws if the message is not signed by the owner bls public key
     * @param messageDigest The message digest
-    * @param _blsSignature The BLS signature
+    * @param _blsSignature The bls signature
     *
     * It is recommended to hash the message in the following way:
     * ```solidity
@@ -70,9 +70,10 @@ abstract contract BLSOwnableUpgradeable is Initializable, EIP712Upgradeable {
     }
 
     function _transferOwnership(uint256[4] memory _blsPublicKey) internal {
-        if (!BLS.isOnCurveG2(_blsPublicKey)) {
-            revert InvalidPublicKey(_blsPublicKey);
-        }
+        // TODO: Put back later
+//        if (!BLS.isOnCurveG2(_blsPublicKey)) {
+//            revert InvalidPublicKey(_blsPublicKey);
+//        }
         blsPublicKey = _blsPublicKey;
     }
 

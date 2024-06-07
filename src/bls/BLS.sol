@@ -1,12 +1,12 @@
-// BLS Verification utilities, taken from https://github.com/thehubbleproject/hubble-contracts/blob/master/contracts/libs/BLS.sol
+// bls Verification utilities, taken from https://github.com/thehubbleproject/hubble-contracts/blob/master/contracts/libs/BLS.sol
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.21;
+pragma solidity ^0.8.25;
 
 import { ModexpInverse, ModexpSqrt } from "./ModExp.sol";
 
 /**
-    @title  Boneh–Lynn–Shacham (BLS) signature scheme on Barreto-Naehrig 254 bit curve (BN-254)
-    @notice We use BLS signature aggregation to reduce the size of signature data to store on chain.
+    @title  Boneh–Lynn–Shacham (bls) signature scheme on Barreto-Naehrig 254 bit curve (BN-254)
+    @notice We use bls signature aggregation to reduce the size of signature data to store on chain.
     @dev We use G1 points for signatures and messages, and G2 points for public keys
  */
 library BLS {

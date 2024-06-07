@@ -2,6 +2,10 @@
 
 Dopamine Solidity is a robust smart contract system built on the Ethereum blockchain. It is primarily written in Solidity and leverages the OpenZeppelin library for secure and standardized contract development. The project is designed to facilitate the staking and unstaking of ERC20 tokens and Ethereum (ETH).
 
+```shell
+forge script ./script/Deploy.s.sol:All --broadcast --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
 ## Using Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
@@ -52,7 +56,7 @@ $ anvil
 ### Deploy
 
 ```shell
-$ forge script script/DopamineVault.sol.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+$ forge script script/VaultV1.sol.sol.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
 ```
 
 ### Cast
